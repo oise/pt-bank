@@ -6,7 +6,7 @@
 - App is now available on `http://localhost:5000`
 
 ## Test
-- `yarn test` for all available test suite.
+- `yarn test` for all available test suites.
 
 
 To see an already deployed version of this app, visit https://fierce-meadow-59583.herokuapp.com/
