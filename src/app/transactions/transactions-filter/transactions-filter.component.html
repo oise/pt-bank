@@ -1,0 +1,25 @@
+<form [formGroup]="filterForm" class="filter-actions">
+  <div class="filter-actions-search">
+    <input class="form-control" placeholder="Search by typing" formControlName="search"/>
+    <div class="filter-actions-search-close" *ngIf="showClose" (click)="resetSearch()">x</div>
+  </div>
+
+  <div class="filter-actions-sort">
+    <div class="filter-actions-sort-label">sort by</div>
+    <div class="filter-actions-sort-item" [ngClass]="{'-active': getControl('date').value }" (click)="sortBy('date')">
+      Date
+    </div>
+    <div class="filter-actions-sort-item" (click)="sortBy('beneficiary')"
+         [ngClass]="{'-active': getControl('beneficiary').value }">Beneficiary
+    </div>
+    <div class="filter-actions-sort-item" (click)="sortBy('amount')"
+         [ngClass]="{'-active': getControl('amount').value }">Amount
+    </div>
+    <select class="form-control filter-actions-sort-order" formControlName="order">
+      <option value="default">default order</option>
+      <option value="ASC">asc</option>
+      <option value="DESC">desc</option>
+    </select>
+  </div>
+</form>
+

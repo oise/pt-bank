@@ -1,0 +1,14 @@
+<div class="transactions-list">
+  <div class="transactions-list-items" *ngFor="let transaction of transactions | async">
+    <div class="transactions-list-item -category-code" [style.background-color]="transaction.categoryCode"></div>
+    <div class="transactions-list-item -date">{{transaction.transactionDate | date :'MMM. dd' }}</div>
+    <div  class="transactions-list-item -logo">
+      <img src="{{transaction.merchantLogo}}"/>
+    </div>
+    <div class="transactions-list-item -merchant flex-column">
+        <div class="bold">{{transaction.merchant}}</div>
+        <div>{{transaction.transactionType}}</div>
+    </div>
+    <div class="transactions-list-item -amount">{{transaction.amount | currency}}</div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+@import "colours";
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  &-items {
+    width: 100%;
+    display: grid;
+    grid-column-gap: 8px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));;
+    align-items: center;
+    height: 80px;
+    border-left: 1px solid $light-gray;
+    border-right: 1px solid $light-gray;
+
+    &:nth-child(odd) {
+      border: 1px solid $light-gray;
+    }
+
+    &:last-of-type {
+      border-bottom: 1px solid $light-gray;
+    }
+  }
+
+  &-item {
+    width: auto;
+
+    &.-category-code {
+      height: 100%;
+      width: 10px;
+    }
+
+    &.-date {
+      grid-column-end: span 1;
+    }
+
+    &.-logo {
+      grid-column-end: span 2;
+      img{
+        width: 50px;
+      }
+    }
+
+    &.-merchant {
+      grid-column-end: span 7;
+
+    }
+
+    &.-amount {
+      font-weight: bold;
+      grid-column-end: span 1;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    &-items {
+      height: 160px;
+      position: relative;
+      padding-left: 8px;
+    }
+
+    &-item {
+      &.-category-code {
+        height: 100%;
+        width: 5px;
+        position: absolute;
+      }
+
+      &.-date {
+        grid-column-end: span 6;
+      }
+
+      &.-logo {
+        grid-column-end: span 6;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 8px;
+        img{
+          width: 50px;
+        }
+      }
+
+      &.-merchant {
+        grid-column-end: span 12;
+      }
+
+      &.-amount {
+        grid-column-end: span 12;
+
+      }
+
+    }
+  }
+
+
+}

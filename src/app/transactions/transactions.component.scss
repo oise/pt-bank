@@ -1,0 +1,33 @@
+@import "colours";
+
+.transactions {
+  &-wrapper {
+    border-radius: 5px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+    padding-bottom: 32px;
+  }
+
+  &-header {
+    height: 50px;
+    display: flex;
+    background-color: $secondary;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 16px;
+
+    &-content {
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  &-content {
+    padding: 0 16px;
+  }
+
+
+}

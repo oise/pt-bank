@@ -1,0 +1,9 @@
+<div class="transactions-wrapper">
+  <div class="transactions-header h3"><i class="peachicon peachicon-history"></i>
+    <div class="transactions-header-content">Recent Transactions</div>
+  </div>
+  <div class="transactions-content">
+    <app-transactions-filter></app-transactions-filter>
+    <app-transactions-list [transactions]="transactions$"></app-transactions-list>
+  </div>
+</div>

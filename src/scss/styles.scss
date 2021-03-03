@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+@import 'colours';
+@import "variables";
+
+@font-face {
+  font-family: "PeachIcon";
+  src: url("../icons/PeachIcon.woff2") format("woff2"),
+  url("../icons/PeachIcon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  height: 100vh;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $font-color;
+  font-size: 16px;
+  background: $light-gray;
+  font-weight: 300;
+  font-family: 'Kanit', sans-serif;
+}
+
+
+h3,
+.h3 {
+  color: #fff;
+  font-weight: 400;
+}
+
+
+//Buttons
+.button {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  min-width: 140px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: $font-color;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &-primary {
+    background-color: $primary;
+    color: #fff;
+  }
+
+  &-neutral{
+    background-color: $medium-gray;
+    color: $font-color;
+  }
+
+  &-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+//Page
+.page {
+  &-wrapper {
+    margin-top: 80px;
+    @media only screen and (min-width: 992px) {
+      padding: 64px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding: 32px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      padding:16px;
+    }
+  }
+}
+
+//Form
+.form{
+  &-item {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0;
+    label {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  &-control {
+    background-color: transparent;
+    border:none;
+    border-bottom: 2px solid $light-gray;
+    height:40px;
+    outline:none;
+    color:$font-color;
+    transition: border-bottom-color 150ms ease-in;
+    flex:1 1 auto;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 4px 0;
+    &:focus, &:active {
+      border:none;
+      border-bottom: 2px solid $secondary;
+    }
+    &::placeholder,&::-webkit-input-placeholder{
+      color: lighten($font-color, 40%)
+    }
+
+    &-group{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      &-icon{
+        padding: 4px 4px 4px 0;
+        border-bottom: 2px solid $light-gray;
+        height: 40px;
+        line-height: 28px;
+        font-size: 16px;
+      }
+    }
+  }
+  &-error {
+    font-size: 13px;
+    color:$red;
+  }
+}
+
+
+//Helpers
+.float-right {
+  float: right;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.bold {
+  font-weight: bold;
+}
+
+
+
+//Icons
+[class^="peachicon-"]:before, [class*=" peachicon-"]:before,
+[class^="peachicon-"]:after, [class*=" peachicon-"]:after {
+  font-family: PeachIcon;
+  font-size: 28px;
+  font-style: normal;
+}
+
+.peachicon-transfer:before { content: "\f100"; }
+.peachicon-history:before { content: "\f101"; }

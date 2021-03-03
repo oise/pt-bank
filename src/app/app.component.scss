@@ -1,0 +1,42 @@
+.app {
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    app-transfers {
+      margin-right: 16px;
+      width: 400px;
+      min-height: 450px;
+    }
+    app-transactions {
+      flex: 1
+    }
+
+    @media only screen and (max-width: 600px) {
+      app-transfers {
+        width: 100%;
+        margin-bottom: 32px;
+        margin-right: 0;
+      }
+      app-transactions {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-width: 601px ) and (max-width: 1024px) {
+      app-transfers {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 32px;
+      }
+      app-transactions {
+        width: 100%;
+      }
+    }
+
+
+
+
+
+  }
+}

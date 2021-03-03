@@ -1,0 +1,66 @@
+@import "colours";
+
+.transfers {
+  &-wrapper {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+    padding-bottom: 32px;
+  }
+
+  &-header {
+    height: 50px;
+    display: flex;
+    background-color: $secondary;
+    align-items: center;
+    padding: 0 16px;
+
+    &-content {
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  &-content {
+    padding: 0 16px;
+
+    &-fromAccount {
+      border-bottom: 2px solid $light-gray;
+      padding-bottom: 4px;
+      color: lighten($font-color, 25%);
+    }
+  }
+
+
+  &-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 16px;
+    margin-top: 32px;
+    flex-grow: 1;
+
+    &-header {
+      font-weight: bold;
+      color: $primary;
+      margin-bottom: 32px;
+    }
+
+    &-recipient {
+      border-bottom: 1px dashed $font-color;
+      margin-top: 16px;
+      margin-bottom: 32px;
+    }
+
+    &-amount {
+      margin-top: 16px;
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+  }
+}

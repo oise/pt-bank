@@ -1,0 +1,56 @@
+<section class="transfers-wrapper">
+  <div class="transfers-header h3"><i class="peachicon peachicon-transfer"></i>
+    <div class="transfers-header-content">Make a Transfer</div>
+  </div>
+  <ng-template #mainContent >
+    <div class="transfers-content">
+      <form [formGroup]="transfersForm" (ngSubmit)="onSubmit()">
+        <div class="form-item">
+          <label>From Account</label>
+          <div class="transfers-content-fromAccount">Free Checking(4692)
+            - {{availableAmount  | currency: 'USD':'symbol-narrow'}}</div>
+        </div>
+
+        <div class="form-item">
+          <label>To Account</label>
+          <input formControlName="toAccount" aria-label="To Account" class="form-control"/>
+          <span *ngIf="hasError('toAccount')" class='form-error'>To Account is required</span>
+        </div>
+
+        <div class="form-item">
+          <label>Amount</label>
+          <div class="form-control-group">
+            <span class="form-control-group-icon">{{currencySymbol}}</span>
+            <input formControlName="amount" aria-label="amount" class="form-control" appNumeric/>
+          </div>
+          <span *ngIf="hasError('amount','required')" class='form-error' >Amount is required</span>
+          <span *ngIf="hasError('amount','overdraftProtection')" class='form-error'>Overdraft shouldn't exceed 500</span>
+        </div>
+
+        <button type="submit" class="button button-primary float-right">Submit</button>
+      </form>
+    </div>
+  </ng-template>
+
+  <!--TRANSFER PREVIEW-->
+  <div class="transfers-preview" *ngIf="isPreview else mainContent">
+    <div class="transfers-preview-header">
+      Transfer Preview
+    </div>
+    You are about to make a transfer
+    to:
+    <div class="transfers-preview-recipient">
+      {{getControl('toAccount')?.value}}
+    </div>
+    <div>for an amount of:</div>
+    <div class="transfers-preview-amount">
+      {{getControl('amount')?.value | currency: 'USD':'symbol-narrow'}}
+    </div>
+
+    <div class="transfers-preview-buttons button-group">
+      <button class="button button-neutral" (click)="isPreview = false">Cancel</button>
+      <button class="button button-primary" (click)="onComplete()">Transfer</button>
+    </div>
+  </div>
+  <!--  TRANSFER PREVIEW-->
+</section>
