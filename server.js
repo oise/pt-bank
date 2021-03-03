@@ -14,5 +14,5 @@ app.all('*', function (req, res) {
 });
 
 app.listen(port, function () {
-  console.log('Peachtree is running on 80');
+  console.log(`Peachtree is running on ${process.env.PORT}`);
 });
